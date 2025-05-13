@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://qrdpa4vb3hj2"]
+
+[ext_resource type="Texture2D" uid="uid://clgkfasdismhs" path="res://Assets/8b66470192b33bf7375aaf25cf963a10.jpg" id="1_cf8jl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="8b66470192b33Bf7375Aaf25Cf963a10" type="Sprite2D" parent="."]
+position = Vector2(154, 173)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_cf8jl")
