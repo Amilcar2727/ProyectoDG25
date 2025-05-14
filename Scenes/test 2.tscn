@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdyywci7sd7db"]
+
+[ext_resource type="Texture2D" uid="uid://b2340w5tkexvg" path="res://Assets/mario-iconico-super-mario-bros-nes-nintendo-8-bits.webp" id="1_bp8pt"]
+
+[node name="Mario-iconico-super-mario-bros-nes-nintendo-8-bits" type="Sprite2D"]
+position = Vector2(533, 271)
+texture = ExtResource("1_bp8pt")
