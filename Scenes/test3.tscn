@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cuko4ovmx10x1"]
+[gd_scene load_steps=2 format=3 uid="uid://cuko4ovmx10x1"]
+
+[ext_resource type="Texture2D" uid="uid://bspfuevfm3pql" path="res://Assets/aa.png" id="1_iauul"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Aa" type="Sprite2D" parent="."]
+position = Vector2(290, 216)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iauul")
