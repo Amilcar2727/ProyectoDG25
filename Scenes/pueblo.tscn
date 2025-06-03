@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dpr4cnglsmuwa"]
+[gd_scene load_steps=32 format=4 uid="uid://dpr4cnglsmuwa"]
 
 [ext_resource type="Texture2D" uid="uid://bw1cwdbiva8h4" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_v2.png" id="1_c2tex"]
 [ext_resource type="Texture2D" uid="uid://c1cai6a1gemv0" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_8heaj"]
