@@ -33,8 +33,6 @@ var lasty = lastmove.new()
 
 func _physics_process(_delta):
 	var input_direction: Vector2
-	input_direction = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down")).normalized();
-	
 	var p_up = Input.is_action_pressed("ui_up")
 	var p_down = Input.is_action_pressed("ui_down")
 	var p_left = Input.is_action_pressed("ui_left")
