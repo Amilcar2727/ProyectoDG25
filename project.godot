@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[debug]
+
+stdout/file_logging=true
+stdout/log_path="user://debug_log.txt"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
@@ -26,3 +31,5 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+global_illumination/sdfgi/frames_to_converge=2
+shader_cache/compression_mode=0

@@ -1,4 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctbit72bm74lc"]
+[gd_scene load_steps=21 format=3 uid="uid://ctbit72bm74lc"]
+
+[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="1_cx167"]
+[ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="2_dolsu"]
+[ext_resource type="Texture2D" uid="uid://crrhhsk71ucfd" path="res://MenuScene/Textures/rock030_alb_ht.png" id="3_cx167"]
+[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="3_n4eug"]
+[ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="4_dlksc"]
+[ext_resource type="Texture2D" uid="uid://c8dstwvqbsmxs" path="res://MenuScene/Textures/rock030_nrm_rgh.png" id="4_dolsu"]
+[ext_resource type="Shader" uid="uid://de143jr4gqx4u" path="res://Menu.gdshader" id="7_dlksc"]
+[ext_resource type="PackedScene" uid="uid://dc0gafumukjon" path="res://Scenes/UI_Menu.tscn" id="8_hcwhg"]
 
 [sub_resource type="Gradient" id="Gradient_lthh4"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -43,7 +52,6 @@ _shader_parameters = {
 &"projection_threshold": 0.8,
 &"world_space_normal_blend": true
 }
-show_checkered = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cx167"]
 transparency = 4
@@ -63,8 +71,37 @@ last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_hcwhg"]
+name = "ground037_alb_ht"
+albedo_texture = ExtResource("1_cx167")
+normal_texture = ExtResource("2_dolsu")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_n4eug"]
+name = "rock030_alb_ht"
+id = 1
+albedo_texture = ExtResource("3_cx167")
+normal_texture = ExtResource("4_dolsu")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_dlksc"]
+name = "rock023_alb_ht"
+id = 2
+albedo_texture = ExtResource("3_n4eug")
+normal_texture = ExtResource("4_dlksc")
+
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_n4eug"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dolsu")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_hcwhg"), SubResource("Terrain3DTextureAsset_n4eug"), SubResource("Terrain3DTextureAsset_dlksc")])
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcwhg"]
+shader = ExtResource("7_dlksc")
+shader_parameter/brightness = -0.1
+shader_parameter/contrast = 1.1
+shader_parameter/tint_color = Color(0.2, 0.25, 0.3, 1)
+shader_parameter/tint_strength = 0.2
+
+[sub_resource type="Environment" id="Environment_n4eug"]
+background_mode = 1
+background_color = Color(0.760784, 0.94902, 0.909804, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -72,6 +109,24 @@ mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_dolsu")])
 data_directory = "res://MenuScene"
 material = SubResource("Terrain3DMaterial_ylpcl")
 assets = SubResource("Terrain3DAssets_n4eug")
-show_checkered = true
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="FiltroSombrioLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="FiltroSombrioLayer"]
+material = SubResource("ShaderMaterial_hcwhg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.137445, -0.248004, -0.958959, 0, 0.968148, -0.25038, 0.990509, 0.0344134, 0.133067, 30, 0.629, 130)
+environment = SubResource("Environment_n4eug")
+fov = 60.0
+
+[node name="UILayer" parent="." instance=ExtResource("8_hcwhg")]
