@@ -15,6 +15,22 @@ run/main_scene="uid://dwkn030ph7xjj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+SceneManager="*res://Scripts/SceneManager.gd"
+
+[debug]
+
+stdout/file_logging=true
+stdout/log_path="user://debug_log.txt"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+global_illumination/sdfgi/frames_to_converge=2
+shader_cache/compression_mode=0
